@@ -12,7 +12,7 @@ So the first step is to deploy the challenge machine in the tryhackme platform, 
 
 ![test](images/3.png)
 
-After seeing that we are in fact into the network we try to access the target server with the default server, we run nmap to scan the target with the `-sV` flag to enumerate the version of the sotware running in the ports of the server. `nmap -sV 10.201.65.80` 
+After seeing that we are in fact into the network  we run nmap to scan the target with the `-sV` flag to enumerate the version of the sotware running in the ports of the server. `nmap -sV 10.201.65.80` 
 
 ![test](images/4.png)
 
