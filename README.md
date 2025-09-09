@@ -1,3 +1,4 @@
 # Fun
-. Hacking? Solving an easy challenge in tryhackme.com
+. Hacking? Solving an easy challenge on tryhackme.com
+![test](images/1.png)
 
