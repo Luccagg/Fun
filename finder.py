@@ -1,3 +1,4 @@
+#finder of endpoints
 import socket
 
 HOST = '10.201.22.126'
