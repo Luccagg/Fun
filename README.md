@@ -43,3 +43,10 @@ Exploring the .git folder we find that the last commit and we can see a little b
 
 ![text](images/77].png)
 ![text](images/code.png)
+
+In the python code we see that if the data == 'some_endpoint': then a function get_this_endpoint will be called. So we need to bruteforce to find the endpoint, we achieve this creating a .py script that bruteforce for endpoints after connecting to the server that is
+![text](images/11.png)
+After this we discover the admin endpoint evoke a password input and we need to bruteforce the password by the same method and we are in with a root shell
+![text](images/12.png)
+![text](images/13.png)
+![text](images/14.png)
