@@ -34,3 +34,7 @@ In the nc -lvnp 1337 we receive a connection from 10.201.92.41 (our target addre
 
 ![text](images/7.png)
 ![text](images/b.png)
+We the user think and the password _TH1NKINGPirate$_ we can connect to the target via ssh using the think user
+![text](images/c.png)
+![text](images/d.png)
+![text](images/e.png)
