@@ -30,4 +30,5 @@ We use a reverse shell cheat sheet online to look an one line python code to mak
 
 ![text](images/6.png)
 
-In the nc -lvnp 1337 we receive a connection from 10.201.92.41 (our target address) and a **$** which means a input for shell, when we run `id` into this shell we received in port 1337 the output is **www-data** which is the user responsible for the http server, so we are inside the target server and running code as www-date user, which is a very low priveleged user in the target system, the next step is to realize a **privilege escalation** to achieve root into the target system, owning the target **TO BE EXPANDED**
+In the nc -lvnp 1337 we receive a connection from 10.201.92.41 (our target address) and a **$** which means a input for shell, when we run `id` into this shell we received in port 1337 the output is **www-data** which is the user responsible for the http server, so we are inside the target server and running code as www-date user, which is a very low priveleged user in the target system, the next step is to realize a **privilege escalation** to achieve root into the target system, owning the target. So we have access to the target server but with the user www-data
+![text](images/7.png)
