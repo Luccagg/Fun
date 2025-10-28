@@ -33,15 +33,21 @@ We use a reverse shell cheat sheet online to look an one line python code to mak
 In the nc -lvnp 1337 we receive a connection from 10.201.92.41 (our target address) and a **$** which means a input for shell, when we run `id` into this shell we received in port 1337 the output is **www-data** which is the user responsible for the http server, so we are inside the target server and running code as www-date user, which is a very low priveleged user in the target system, the next step is to realize a **privilege escalation** to achieve root into the target system, owning the target. So we have access to the target server but with the user www-data (It is not showed by the photos, but in my machine i runned a simple http server by `python3 -m http.server PORT` to connect via the victim's machine and get the linpeas.sh program inside the target server, linpeas.sh *(https://github.com/peass-ng/PEASS-ng/blob/master/linPEAS/README.md)* is a program to find privilege escalation and it returned us the existence of `/opt/dev/.git`)
 
 ![text7](images/7.png)
+
 ![text8](images/b.png)
+
 With the user think and the password __TH1NKINGPirate$__ we can connect to the target via ssh using the think user
+
 ![text9](images/c.png)
+
 ![text10](images/d.png)
+
 ![text11](images/e.png)
 
 Exploring the .git folder we find that the last commit and we can see a little bit of the python backend code running in the server
 
 ![text12](images/77].png)
+
 ![text13](images/code.png)
 
 In the python code we see that if the data == 'some_endpoint': then a function get_this_endpoint will be called. So we need to bruteforce to find the endpoint, we achieve this creating a .py script that bruteforce for endpoints after connecting to the server that is
@@ -51,5 +57,7 @@ In the python code we see that if the data == 'some_endpoint': then a function g
 After this we discover the admin endpoint evoke a password input and we need to bruteforce the password by the same method and we are in with a root shell
 
 ![text14](images/12.png)
+
 ![text15](images/13.png)
+
 ![text16](images/14.png)
